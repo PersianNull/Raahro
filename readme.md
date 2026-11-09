@@ -8,6 +8,10 @@ It uses [sing-box](https://github.com/SagerNet/sing-box) to create a virtual TUN
 
 Connect your phone, tablet, or laptop to your PC's hotspot and let it use the same proxy connection.
 
+## Screenshots
+
+![Raahro Main Interface](docs/screenshots/main-window.png)
+
 ## Features
 
 - **Proxy-powered Wi-Fi hotspot** — Share your local SOCKS5 connection with other devices.
