@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2F81F7"/>
+      <stop offset="100%" stop-color="#1E5BB8"/>
+    </linearGradient>
+
+    <!-- Soft outer glow for the road -->
+    <filter id="roadGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <!-- Glow + drop shadow for binary digits -->
+    <filter id="digitGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4"
+                    flood-color="#0A1F3D" flood-opacity="0.45"/>
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Squircle clip -->
+    <clipPath id="squircleClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded-square (squircle) background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230" fill="url(#bgGrad)"/>
+
+  <!-- Inner content, clipped to the squircle -->
+  <g clip-path="url(#squircleClip)">
+
+    <!-- Soft halo behind the road -->
+    <path d="M 240,800 C 240,560 784,560 784,224"
+          stroke="#FFFFFF" stroke-width="80" fill="none"
+          stroke-linecap="round" opacity="0.22"
+          filter="url(#roadGlow)"/>
+
+    <!-- Main road (S-curve) -->
+    <path d="M 240,800 C 240,560 784,560 784,224"
+          stroke="#FFFFFF" stroke-width="44" fill="none"
+          stroke-linecap="round" opacity="0.97"/>
+
+    <!-- Dashed center line (highway hint) -->
+    <path d="M 240,800 C 240,560 784,560 784,224"
+          stroke="#2F81F7" stroke-width="4" fill="none"
+          stroke-linecap="round"
+          stroke-dasharray="14 22" opacity="0.35"/>
+
+    <!-- Binary digits flowing along the road -->
+    <g font-family="'Consolas','Courier New',monospace"
+       font-weight="bold" font-size="72" fill="#FFFFFF"
+       text-anchor="middle">
+      <text x="255" y="725" opacity="0.35" filter="url(#digitGlow)">0</text>
+      <text x="325" y="646" opacity="0.55" filter="url(#digitGlow)">1</text>
+      <text x="431" y="580" opacity="0.75" filter="url(#digitGlow)">0</text>
+      <text x="512" y="538" opacity="0.90" filter="url(#digitGlow)">1</text>
+      <text x="593" y="493" opacity="1.00" filter="url(#digitGlow)">0</text>
+      <text x="699" y="412" opacity="1.00" filter="url(#digitGlow)">1</text>
+    </g>
+  </g>
+</svg>
