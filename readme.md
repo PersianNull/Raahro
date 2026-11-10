@@ -54,7 +54,9 @@ Once connected, devices using the hotspot can access the internet through the co
 
 Download the pre-built application from the [Raahro v1.0.0 Release](https://github.com/PersianNull/Raahro/releases/tag/v1.0.0).
 
-Extract the downloaded files and follow the instructions below to get started.
+Before running Raahro, make sure you have installed [Npcap](https://npcap.com/) with **WinPcap API-compatible mode** enabled during installation.
+
+Extract the downloaded files and run `Raahro.exe` as **Administrator**.
 ## Requirements
 
 Before running Raahro, make sure you have:
