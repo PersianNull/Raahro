@@ -50,7 +50,11 @@ flowchart TD
 ```
 
 Once connected, devices using the hotspot can access the internet through the configured proxy connection.
+### Download
 
+Download the pre-built application from the [Raahro v1.0.0 Release](https://github.com/PersianNull/Raahro/releases/tag/v1.0.0).
+
+Extract the downloaded files and follow the instructions below to get started.
 ## Requirements
 
 Before running Raahro, make sure you have:
